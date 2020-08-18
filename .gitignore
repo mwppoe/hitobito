@@ -81,3 +81,10 @@ yarn-debug.log*
 
 # for those who want to reduce errors in the rails-log
 public/favicon.ico
+
+/public/packs
+/public/packs-test
+/node_modules
+/yarn-error.log
+yarn-debug.log*
+.yarn-integrity

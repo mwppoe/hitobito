@@ -71,6 +71,7 @@ gem 'validates_by_schema'
 gem 'validates_timeliness', '< 4.0'
 gem 'vcard'
 gem 'wagons', '0.6.1'
+gem 'webpacker'
 
 # load after others because of active record inherited alias chain.
 gem 'kaminari'
