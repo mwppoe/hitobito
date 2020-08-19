@@ -13,12 +13,20 @@ import 'regenerator-runtime/runtime';
 /**
  * Dependencies
  */
-import jQuery from 'jquery';
-import 'js-cookie';
-import 'jquery-ujs';
-// import 'jquery-ui/widgets/datepicker';
-// import 'jquery-ui-datepicker-i18n';
-// import 'jquery-ui/effects/effect-highlight';
+import 'jquery';
+import {} from 'jquery-ujs';
+import 'moment'; // TODO: make global?
+import 'jquery.turbolinks/vendor/assets/javascripts/jquery.turbolinks';
+// import '../src/vendor/modernizr.custom.min'; // TODO: exception...
+
+// jQuery UI
+import 'jquery-ui/ui/widgets/datepicker';
+import 'jquery-ui/ui/i18n/datepicker-de';
+import 'jquery-ui/ui/i18n/datepicker-fr';
+import 'jquery-ui/ui/i18n/datepicker-it';
+import 'jquery-ui/ui/effects/effect-highlight';
+
+// Bootstrap
 import 'bootstrap-sass/js/bootstrap-transition';
 import 'bootstrap-sass/js/bootstrap-alert';
 import 'bootstrap-sass/js/bootstrap-button';
@@ -29,21 +37,31 @@ import 'bootstrap-sass/js/bootstrap-popover';
 import 'bootstrap-sass/js/bootstrap-typeahead';
 import 'bootstrap-sass/js/bootstrap-tab';
 import 'bootstrap-sass/js/bootstrap-modal';
-// import 'bootstrap3-wysihtml5-bower';
-// TODO: jquery_nested_form
+
+
+// UI Components
 import 'chosen-js';
-// TODO: jquery.remotipart
-// TODO: modernizr
-import 'moment'; // TODO: make global?
-// TODO: custom scripts
-// TODO: wysiwyg script
+
+// Gems – the following scripts are part of asset pipeline gems and
+// are not available as NPM packages; they have been copied over into
+// the javascripts directory and must be updated when the Gem gets
+// updated
+import '../src/vendor/gems/remotiport/jquery.iframe-transport';
+import '../src/vendor/gems/remotiport/jquery.remotipart';
+import '../src/vendor/gems/jquery_nested_form';
+
+// Custom scripts
+function requireAll(r) { r.keys().forEach(r); }
+requireAll(require.context('../src/modules', true, /\.(js|coffee)$/));
+// TODO: wysiwyg script (separate bundle?)
 // TODO: wagon script
-// import 'jquery.turbolinks';
 
-// Provide the jQuery object globally
-window.$ = jQuery
-window.jQuery = jQuery
+import * as turbolinks from 'turbolinks';
+turbolinks.start();
 
+/**
+ * Images
+ */
 // Uncomment to copy all static images under ../images to the output folder and reference
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
