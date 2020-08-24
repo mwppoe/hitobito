@@ -264,6 +264,9 @@ label.radio {
 .label-columns .controls {
   label {
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-left: 0 !important;
 
     &:hover {
       background: $grayLighter;
@@ -274,24 +277,26 @@ label.radio {
 .label-columns .control-group + .control-group {
   margin-top: 2em;
 }
-.no-csscolumns .label-columns .controls {
-  @include clearfix;
+
+// Browsers without CSS Grid support
+.label-columns .controls {
+  overflow: hidden; // clearfix
+
   label {
     float: left;
     width: 200px;
-    margin-left: 0 !important;
   }
 }
-.csscolumns .label-columns .controls {
-  -moz-columns: 200px 4;
-  -webkit-columns: 200px 4;
-  columns: 200px 4;
 
-  label {
-    width: 80%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    margin-left: 0 !important;
+// Browsers with CSS Grid support
+@supports (display: grid) {
+  .label-columns .controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 200px);
+
+    label {
+      width: auto;
+    }
   }
 }
 

@@ -17,7 +17,6 @@ import 'jquery';
 import {} from 'jquery-ujs';
 import 'moment';
 import 'jquery.turbolinks/vendor/assets/javascripts/jquery.turbolinks';
-// import '../src/vendor/modernizr.custom.min'; // TODO: exception...
 
 // jQuery UI
 import 'jquery-ui/ui/widgets/datepicker';
