@@ -1,8 +1,10 @@
 const { environment } = require('@rails/webpacker')
 const coffee =  require('./loaders/coffee')
+const erb = require('./loaders/erb')
 const webpack = require('webpack')
 
-environment.loaders.prepend('coffee', coffee);
+environment.loaders.prepend('coffee', coffee)
+environment.loaders.prepend('erb', erb)
 
 /**
  * Old-school libraries must be made globally accessible by exposing
@@ -16,7 +18,7 @@ environment.loaders.append('expose query to window object', {
       exposes: ['jQuery', '$'],
     }
   }]
-});
+})
 environment.loaders.append('expose moment to window object', {
   test: require.resolve('moment'),
   use: [{
@@ -32,6 +34,6 @@ environment.plugins.append('exclude unused moment locales',
     /moment[\\\/]locale$/,
     /^\.\/(en|de|fr|it)$/
   )
-);
+)
 
 module.exports = environment

@@ -14,7 +14,8 @@ import 'regenerator-runtime/runtime';
  * Dependencies
  */
 import 'jquery';
-import {} from 'jquery-ujs';
+import ujs from 'jquery-ujs';
+ujs.start();
 import 'moment';
 import 'jquery.turbolinks/vendor/assets/javascripts/jquery.turbolinks';
 
@@ -37,17 +38,11 @@ import 'bootstrap-sass/js/bootstrap-typeahead';
 import 'bootstrap-sass/js/bootstrap-tab';
 import 'bootstrap-sass/js/bootstrap-modal';
 
-
 // UI Components
 import 'chosen-js';
 
-// Gems – the following scripts are part of asset pipeline gems and
-// are not available as NPM packages; they have been copied over into
-// the javascripts directory and must be updated when the Gem gets
-// updated
-import '../src/vendor/gems/remotiport/jquery.iframe-transport';
-import '../src/vendor/gems/remotiport/jquery.remotipart';
-import '../src/vendor/gems/jquery_nested_form';
+// Gems without NPM package
+import '../src/vendor/gems.js.erb';
 
 // Custom scripts
 function requireAll(r) { r.keys().forEach(r); }

@@ -1,0 +1,12 @@
+/**
+ * Antique Gems that provide JavaScript/CSS do not publish an NPM
+ * package with these assets. We're using ERB to determine the
+ * file paths of these assets to include them into the bundle.
+ */
+
+// nested_form
+import {} from '<%= File.join(Gem.loaded_specs['nested_form'].full_gem_path, 'vendor', 'assets', 'javascripts', 'jquery_nested_form.js') %>';
+
+// remotipart
+import {} from '<%= File.join(Gem.loaded_specs['remotipart'].full_gem_path, 'vendor', 'assets', 'javascripts', 'jquery.iframe-transport.js') %>';
+import {} from '<%= File.join(Gem.loaded_specs['remotipart'].full_gem_path, 'vendor', 'assets', 'javascripts', 'jquery.remotipart.js') %>';
