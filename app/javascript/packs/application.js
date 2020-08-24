@@ -22,8 +22,7 @@ import 'regenerator-runtime/runtime';
  * Dependencies
  */
 import 'jquery';
-import ujs from 'jquery-ujs';
-ujs.start();
+import {} from 'jquery-ujs';
 import 'moment';
 import 'jquery.turbolinks/vendor/assets/javascripts/jquery.turbolinks';
 
