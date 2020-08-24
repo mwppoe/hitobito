@@ -1,6 +1,11 @@
 {
   "name": "hitobito",
   "license": "AGPL-3.0-only",
+  "scripts": {
+    "preanalyze": "webpack --config config/webpack/production.js --profile --json > stats.json",
+    "analyze": "npx webpack-bundle-analyzer stats.json",
+    "postanalyze": "rm stats.json"
+  },
   "dependencies": {
     "@rails/webpacker": "5.2.1",
     "bootstrap-sass": "~2.3.2",
@@ -17,6 +22,7 @@
     "turbolinks": "~5.0.1"
   },
   "devDependencies": {
+    "expose-loader": "^1.0.0",
     "webpack-dev-server": "^3.11.0"
   },
   "resolutions": {

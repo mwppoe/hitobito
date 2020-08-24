@@ -27,8 +27,8 @@
 
     -# Webpacker includes
     -# TODO: Turbolinks track, how?
-    = stylesheet_pack_tag 'application', media: :screen
-    = javascript_pack_tag 'application'
+    = stylesheet_pack_tag 'application', media: :screen, 'data-turbolinks-track': true
+    = javascript_pack_tag 'application', 'data-turbolinks-track': true
 
     -# Legacy asset pipeline includes
     = stylesheet_link_tag 'application.css', media: :screen, 'data-turbolinks-track' => true

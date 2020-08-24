@@ -15,7 +15,7 @@ import 'regenerator-runtime/runtime';
  */
 import 'jquery';
 import {} from 'jquery-ujs';
-import 'moment'; // TODO: make global?
+import 'moment';
 import 'jquery.turbolinks/vendor/assets/javascripts/jquery.turbolinks';
 // import '../src/vendor/modernizr.custom.min'; // TODO: exception...
 
