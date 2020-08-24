@@ -1,4 +1,12 @@
 /* eslint no-console:0 */
+
+/**
+ * Copyright (c) 2020, hitobito AG. This file is part of
+ * hitobito and licensed under the Affero General Public License version 3
+ * or later. See the COPYING file at the top-level directory or at
+ * https://github.com/hitobito/hitobito.
+ */
+
 // This file is automatically compiled by Webpack, along with any other files
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
@@ -44,11 +52,15 @@ import 'chosen-js';
 // Gems without NPM package
 import '../src/vendor/gems.js.erb';
 
-// Custom scripts
+// Custom scripts from core
 function requireAll(r) { r.keys().forEach(r); }
 requireAll(require.context('../src/modules', true, /\.(js|coffee)$/));
+
 // TODO: wysiwyg script (separate bundle?)
-// TODO: wagon script
+// import './wysiwyg.js'
+
+// Custom scripts from all wagons
+import '../src/wagons.js.erb';
 
 import * as turbolinks from 'turbolinks';
 turbolinks.start();
@@ -62,5 +74,3 @@ turbolinks.start();
 //
 // const images = require.context('../images', true);
 // const imagePath = (name) => images(name, true);
-
-console.log('Hello World from Webpacker');
