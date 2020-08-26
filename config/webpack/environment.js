@@ -3,13 +3,18 @@ const coffee =  require('./loaders/coffee')
 const erb = require('./loaders/erb')
 const webpack = require('webpack')
 
+// Transpile CoffeeScript
 environment.loaders.prepend('coffee', coffee)
-environment.loaders.prepend('erb', erb)
 
-/**
- * Old-school libraries must be made globally accessible by exposing
- * them to the window object.
- */
+// Allow to use .js.erb and .scss.erb templates
+environment.loaders.append('erb', erb)
+
+// Bundle images referenced within SASS files
+environment.loaders.find(l => l.key === 'sass').value.use
+  .splice(-1, 0, { loader: 'resolve-url-loader' })
+
+// Old-school libraries must be made globally accessible by exposing
+// them to the window object.
 environment.loaders.append('expose query to window object', {
   test: require.resolve('jquery'),
   use: [{

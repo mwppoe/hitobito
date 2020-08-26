@@ -122,3 +122,4 @@ module Hitobito
 end
 
 require 'prawn/measurement_extensions'
+require_relative '../lib/webpack_helpers'

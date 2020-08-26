@@ -22,7 +22,8 @@ import 'regenerator-runtime/runtime';
  * Dependencies
  */
 import 'jquery';
-import {} from 'jquery-ujs';
+import Rails from 'jquery-ujs';
+// Rails.start();
 import 'moment';
 import 'jquery.turbolinks/vendor/assets/javascripts/jquery.turbolinks';
 
