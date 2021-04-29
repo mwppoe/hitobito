@@ -1,7 +1,7 @@
 PATH
-  remote: ../hitobito_generic
+  remote: ../hitobito_wsjrdp_2023
   specs:
-    hitobito_generic (1.22.17)
+    hitobito_wsjrdp_2023 (0.0.1)
 
 GEM
   remote: https://rubygems.org/
@@ -642,7 +642,7 @@ DEPENDENCIES
   haml
   headless
   hirb
-  hitobito_generic!
+  hitobito_wsjrdp_2023!
   http_accept_language
   icalendar
   image_processing (~> 1.2)

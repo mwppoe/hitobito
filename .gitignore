@@ -89,3 +89,6 @@ public/favicon.ico
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# OSX
+.DS_Store
