@@ -81,7 +81,7 @@ class Person < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
     :first_name, :last_name, :nickname, :company_name, :email, :address, :zip_code, :town, :country
   ]
 
-  GENDERS = %w(m w).freeze
+  GENDERS = %w(m w d).freeze
 
   ADDRESS_ATTRS = %w(address zip_code town country).freeze
 
@@ -197,11 +197,11 @@ class Person < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
   ### Scopes
 
   scope :household, -> { where.not(household_key: nil) }
-  scope :with_address, -> {
+  scope :with_address, lambda {
     where.not(address: [nil, '']).
-    where.not(zip_code: [nil, '']).
-    where.not(town: [nil, '']).
-    where('(last_name IS NOT NULL AND last_name <> "") OR '\
+      where.not(zip_code: [nil, '']).
+      where.not(town: [nil, '']).
+      where('(last_name IS NOT NULL AND last_name <> "") OR '\
           '(company_name IS NOT NULL AND company_name <> "")')
   }
   scope :with_mobile, -> { joins(:phone_numbers).where(phone_numbers: { label: 'Mobil' }) }
