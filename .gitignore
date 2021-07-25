@@ -92,3 +92,5 @@ yarn-debug.log*
 
 # OSX
 .DS_Store
+
+*.pdf
