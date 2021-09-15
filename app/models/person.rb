@@ -81,7 +81,7 @@ class Person < ActiveRecord::Base # rubocop:disable Metrics/ClassLength
     :first_name, :last_name, :nickname, :company_name, :email, :address, :zip_code, :town, :country
   ]
 
-  GENDERS = %w(m w).freeze
+  GENDERS = %w(m w d).freeze
 
   ADDRESS_ATTRS = %w(address zip_code town country).freeze
 
