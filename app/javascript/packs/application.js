@@ -58,6 +58,7 @@ requireAll(require.context('../javascripts/modules', true, /\.(js|coffee)$/));
 
 // Custom scripts from all wagons
 import '../javascripts/wagons';
+import 'chartkick/chart.js';
 
 import * as turbolinks from 'turbolinks';
 turbolinks.start();
